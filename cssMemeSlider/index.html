@@ -2,35 +2,61 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>cssBayan</title>
     <link rel="stylesheet" href="/cssMemeSlider/index.css">
 </head>
-<body>
-<div class="wrapper">
-    <div class="slider">
-        <div class="slider__line">
-            <img class="slider__img" src="/cssMemeSlider/JPG/9d472e79fd558accb9efed45d6a887eb.jpg">
-            <img class="slider__img" src="/cssMemeSlider/JPG/kartinki24_ru_differens_cars_140.jpg">
-            <img class="slider__img" src="/cssMemeSlider/JPG/kartinki24_ru_differens_cars_141.jpg">
-            <img class="slider__img" src="/cssMemeSlider/JPG/pagani-huayra-tricolore-5.jpg">
+<header>
+    <div>
+        <div class="title">
+            <h1>CSS Bayan</h1>
         </div>
-        <div class="list__wrapper">
-            <div class="text__wrapper">
-                <div id="tab_01" class="slider__text">Спорткар</div>
-                <div id="tab_02" class="slider__text">Мускулкар</div>
-                <div id="tab_03" class="slider__text">Мультикар</div>
-                <div id="tab_04" class="slider__text">Блаблакар</div>
+    </div>
+</header>
+<main>
+    <div class="wrapper">
+        <div class="accordion">
+            <div class="accordion-item">
+                <input class="accordion-item__input" type="radio" name="accordion" id="accordion-1" checked>
+                <label class="accordion-item__trigger" for="accordion-1">
+                    <h2>First week of training</h2>
+                    <div class="plus"></div>
+                </label>
+                <div class="accordion-item__content">
+                    <img class="mem" src="https://cdn.rs.school/sloths/stickers/codewars/image.svg" alt="">
             </div>
-            <div class="slider__wrapper">
-                <a href="#tab_01" class="slider__dot active-dot"></a>
-                <a href="#tab_02" class="slider__dot"></a>
-                <a href="#tab_03" class="slider__dot"></a>
-                <a href="#tab_04" class="slider__dot"></a>
+            <div class="accordion-item">
+                <input class="accordion-item__input" type="radio" name="accordion" id="accordion-2">
+                <label class="accordion-item__trigger" for="accordion-2">
+                    <h2>Second week of training</h2>
+                    <div class="plus"></div>
+                </label>
+                <div class="accordion-item__content">
+                    <img class="mem" src="https://cdn.rs.school/sloths/stickers/aws-teamwork/image.svg" alt="">
+                </div>
+            </div>
+            <div class="accordion-item">
+                <input class="accordion-item__input" type="radio" name="accordion" id="accordion-3">
+                <label class="accordion-item__trigger" for="accordion-3">
+                    <h2>Third week of training</h2>
+                    <div class="plus"></div>
+                </label>
+                <div class="accordion-item__content">
+                    <img class="mem" src="https://cdn.rs.school/sloths/stickers/everything-works/image.svg" alt="">
+                </div>
+            </div>
+            <div class="accordion-item">
+                <input class="accordion-item__input" type="radio" name="accordion" id="accordion-4">
+                <label class="accordion-item__trigger" for="accordion-4">
+                    <h2>Fourth week of training</h2>
+                    <div class="plus"></div>
+                </label>
+                <div class="accordion-item__content">
+                    <img class="mem" src="https://cdn.rs.school/sloths/stickers/deadline/image.svg" alt="">
+                </div>
             </div>
         </div>
     </div>
-</div>
-    <script src="/cssMemeSlider/index.js"></script>
-</body>
+</main>
 </html>
