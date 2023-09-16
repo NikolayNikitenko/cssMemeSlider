@@ -23,7 +23,6 @@
     display: flex;
     column-gap: 0.625rem;
 }
-
 .list__wrapper {
     display: flex;
     align-items: center;
@@ -36,6 +35,8 @@
     display: none;
     width: 100%;
     padding: 0.625rem 0 0 0;
+    color: brown;
+    font-weight: 600;
 }
 .slider__text:target {
     display: block;
