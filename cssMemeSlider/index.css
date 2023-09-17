@@ -1,112 +1,119 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 0;
-    background-color: #C1CAD6;
-  }
-  
-  .wrapper {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .accordion {
-    background-color: #C1CAD6;
-    cursor: pointer;
-  }
-  
-  .accordion:hover h2 {
-    color: bisque;
-    transition: 0.4s;
-  }
-  
-  .accordion:hover .plus {
-    border-width: 8px 5px 0 5px;
-    border-color: bisque transparent transparent transparent;
-    transition: 0.4s;
-  }
-  
-  .title {
-    text-align: center;
-  }
-  
-  .accordion-item {
-    position: relative;
-  }
-  
-  .accordion-item__input {
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-  }
-  
-  .accordion-item__trigger {
+#slider { /*положение слайдера*/
+    position: static;
+	text-align: center;
+    top: 10px;
+}
+
+#slider{ /*центровка слайдера*/
+	margin: 0 auto;
+}
+
+#slides article{ /*все изображения справа друг от доруга*/
+	width: 20%;
+	float: left;
+}
+
+#slides .image{ /*устанавливает общий размер блока с изображениями*/
+	width: 500%;
+	line-height: 0;
+}
+
+#overflow{ /*сркывает все, что находится за пределами этого блока*/
+	width: 100%;
+	overflow: hidden;
+}
+
+article img{ /*размер изображений слайдера*/
+	width: 100%;
+}
+
+img {
+    max-width: 850px;
+    max-height: 531px;
+}
+
+#desktop:checked ~ #slider{ /*размер всего слайдера*/
+	max-width: 960px; /*максимальнная длинна*/
+}
+
+label, a{ /*при наведении на стрелки или переключатели - курсор изменится*/
+	cursor: pointer;
+}
+
+.wrapper input{ /*скрывает стандартные инпуты (чекбоксы) на странице*/
+	display: none;
+}
+
+/*позиция изображения при активации переключателя*/
+#switch1:checked ~ #slides .image{
+	margin-left: 0;
+}
+
+#switch2:checked ~ #slides .image{
+	margin-left: -100%;
+}
+
+#switch3:checked ~ #slides .image{
+	margin-left: -200%;
+}
+
+#switch4:checked ~ #slides .image{
+	margin-left: -300%;
+}
+
+#switch5:checked ~ #slides .image{
+	margin-left: -400%;
+}
+
+#controls{ /*положение блока всех управляющих элементов*/
+	margin: -25% 0 0 0;
+	width: 100%;
+	height: 50px;
+}
+
+#active label{ /*стиль отдельного переключателя*/
+	border-radius: 10px; /*скругление углов*/
+	display: inline-block; /*расположение в строку*/
+	width: 15px;
+	height: 15px;
+	background: #bbb;
+}
+
+#active{ /*расположение блока с переключателями*/
+	margin: 23% 0 0;
+	text-align: right;
+}
+
+#active label:hover{ /*поведение чекбокса при наведении*/
+	background: #76c8ff;
+	border-color: #777 !important; /*выполнение в любом случае*/
+}
+
+/*цвет активного лейбла при активации чекбокса*/
+#switch1:checked ~ #active label:nth-child(1),
+#switch2:checked ~ #active label:nth-child(2),
+#switch3:checked ~ #active label:nth-child(3),
+#switch4:checked ~ #active label:nth-child(4),
+#switch5:checked ~ #active label:nth-child(5){
+	background: #18a3dd;
+	border-color: #18a3dd !important;
+}
+
+#slides .image{ /*анимация пролистывания изображений*/
+	transition: all 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+}
+
+#controls label:hover{ /*прозрачность стрелок при наведении*/
+	opacity: 0.6;
+}
+
+#controls label{ /*прозрачность стрелок при отводе курсора*/
+	transition: opacity 0.2s ease-out;
+}
+
+p { /*описание картинок*/
+    color: #777;
+    width: 100%;
+    text-align: left;
     display: flex;
-    justify-content: space-between;
-    text-align: center;
-    border: 1px solid black;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    cursor: pointer;
-  }
-  
-  .accordion-item__content {
-    text-align: center;
-    display: none;
-  }
-  
-  .accordion-item__input:hover ~ .accordion-item__trigger .plus {
-    border-style: solid;
-    border-width: 0 5px 8px 5px;
-    border-color: transparent transparent bisque transparent;
-  }
-  
-  .accordion-item__input:active ~ .accordion-item__trigger h2 {
-    color: black;
-  }
-  
-  .accordion-item__input:active ~ .accordion-item__trigger .plus {
-    border-color: transparent transparent black transparent;
-  }
-  
-  .accordion-item__input:checked ~ .accordion-item__content {
-    display: block;
-  }
-  
-  .accordion-item__input:hover ~ .accordion-item__content {
-    display: block;
-    animation: show-image 1s forwards;
-  }
-  
-  .mem {
-    width: 125px;
-    height: 150px;
-  }
-  
-  h2 {
-    font-style: 20px;
-    padding-left: 20px;
-    color: black;
-  }
-  
-  .plus {
-    content: "";
-    position: relative;
-    border-style: solid;
-    border-width: 0px 0px 0 0px;
-    border-color: black transparent transparent transparent;
-    margin: auto;
-    margin-right: 20px;
-  }
-  
-  @media (max-width: 500px) {
-    h2 {
-      font-size: 16px;
-    }
-    .plus {
-      border-width: 6px 4px 0 4px;
-    }
-    .accordion-item__input:hover ~ .accordion-item__trigger .plus {
-      border-width: 0 4px 6px 4px;
-    }
-  }/*# sourceMappingURL=styles.css.map */
+}
