@@ -1,3 +1,7 @@
+.wrapper {
+    /* background-color: #76c8ff; */
+    margin: 5% 22% 0% 22%;
+}
 #slider { /*положение слайдера*/
     position: static;
 	text-align: center;
@@ -79,10 +83,10 @@ label, a{ /*при наведении на стрелки или переклю�
 	background: #bbb;
 }
 
-#active{ /*расположение блока с переключателями*/
-	margin: 23% 0 0;
+/* #active{ расположение блока с переключателями */
+	/* margin: 2% 6% 0 0;
 	text-align: right;
-}
+} */
 
 #active label:hover{ /*поведение чекбокса при наведении*/
 	background: #76c8ff;
@@ -111,9 +115,62 @@ label, a{ /*при наведении на стрелки или переклю�
 	transition: opacity 0.2s ease-out;
 }
 
-p { /*описание картинок*/
+.buttomtext {
+   
+    width: 60px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+.body_buttontext {
+    display: flex;
+    justify-content: space-between;
+}
+span { /*описание картинок*/
     color: #777;
     width: 100%;
     text-align: left;
     display: flex;
 }
+#active {
+    margin: 10px 0;
+}
+
+
+
+.text_1 {
+    width: 80px;
+    height: 30px;
+    transition: .5s;
+    display: none;
+}
+.text_2 {
+    width: 80px;
+    height: 30px;
+    transition: .5s;
+    display: none;
+}
+.text_3 {
+    width: 80px;
+    height: 30px;
+    transition: .5s;
+    display: none;
+}
+.text_4 {
+    width: 80px;
+    height: 30px;
+    transition: .5s;
+    display: none;
+}
+
+#switch1:checked ~ .text_1{
+    display: block;
+  } 
+#switch2:checked ~ .text_2{
+    display: block;
+  } 
+#switch2:checked ~ .text_3{
+    display: block;
+  } 
+#switch3:checked ~ .text_4{
+    display: block;
+  } 
